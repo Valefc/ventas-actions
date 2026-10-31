@@ -1,3 +1,4 @@
+
 name: Ventas - CI y CD
 
 on:
@@ -20,6 +21,11 @@ jobs:
   verificar:
     name: CI - Probar y generar informe
     runs-on: ubuntu-latest
+
+    # Permisos para ejecutar configure-pages
+    permissions:
+      contents: read
+      pages: read
 
     steps:
       - name: Obtener archivos del repositorio
@@ -53,6 +59,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
+      contents: read
       pages: write
       id-token: write
 
